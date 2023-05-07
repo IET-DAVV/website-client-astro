@@ -1,0 +1,47 @@
+*,
+*::after,
+*::before {
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  // --clr-primary: #4643e1;
+  --clr-primary: #3b7a9e;
+  --clr-primary-light: #e5e5e5;
+
+  --fixed-width: 95%;
+  --fixed-width-in: 70%;
+
+  --clr-text-para: #808080;
+}
+/* Font sizes yet to be decided */
+h1 {
+  font-size: 4rem;
+  line-height: 140%;
+}
+h2 {
+  line-height: 140%;
+  font-size: 2.5rem;
+}
+h3 {
+  line-height: 140%;
+  font-size: 2rem;
+}
+h4 {
+  line-height: 140%;
+  font-size: 1.2rem;
+}
+h5 {
+  font-size: 1.2rem;
+}
+p {
+  line-height: 26px;
+  color: var(--clr-text-para);
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 700px) {
+  :root {
+    --fixed-width-in: 90%;
+  }
+}

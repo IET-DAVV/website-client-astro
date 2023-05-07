@@ -1,0 +1,65 @@
+@import "../../../../styles/commons.scss";
+@import "../../../../styles/globals.scss";
+
+.container {
+  color: white;
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--clr-primary);
+  width: 100%;
+  .subContainer {
+    padding: 1rem 1rem 1rem 5rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5vh;
+    .name {
+      font-size: 4rem;
+      line-height: 140%;
+      font-family: serif;
+    }
+    .row {
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1rem;
+      .line {
+        width: 25%;
+        height: 2px;
+        background-color: white;
+      }
+    }
+  }
+}
+.collegeImage {
+  height: 70%;
+  width: 70%;
+}
+
+.exploreMoreBtn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    .subContainer {
+      padding: 4rem 0rem 4rem 3rem;
+      width: 100%;
+    }
+    :nth-child(2).subContainer {
+      display: none;
+    }
+  }
+}
