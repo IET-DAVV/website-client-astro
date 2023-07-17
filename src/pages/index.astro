@@ -1,22 +1,14 @@
 ---
-import EventSection from "../components/Landing Page/EventsSection/EventSection";
-import WelcomeSection from "../components/Landing Page/WelcomeSection/WelcomeSection";
-import "../../styles/reset.css"
-import RecruitersSection from "../components/Landing Page/RecruitersSection/RecruitersSection";
-import ClubsSection from "../components/Landing Page/ClubsSection/ClubsSection";
+import MainLayout from "../layouts/MainLayout.astro";
+import EventSection from "../components/landing/EventsSection/EventSection";
+import WelcomeSection from "../components/landing/WelcomeSection.astro";
+import RecruitersSection from "../components/landing/RecruitersSection.astro";
+import ClubsSection from "../components/landing/ClubsSection.astro";
 ---
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<div>
-	<WelcomeSection />
-	<RecruitersSection/>
-	<EventSection client:load />
-	<ClubsSection client:load  />
-</div>
 
-<style>
-  body{
-	margin: 0;
-	padding: 0;
-  }
-</style>
-
+<MainLayout title="IET DAVV">
+  <WelcomeSection />
+  <RecruitersSection />
+  <EventSection client:load />
+  <ClubsSection />
+</MainLayout>
