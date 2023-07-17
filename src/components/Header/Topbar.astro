@@ -1,0 +1,176 @@
+---
+import { Icon } from "astro-icon";
+
+let data = {
+  contact: {
+    mail: "1234@ietdavv.edu.in",
+    phone: "+0731-2455856",
+  },
+  links: [
+    {
+      name: "Placement",
+      link: "/placement",
+    },
+    {
+      name: "Courses",
+      links: [
+        {
+          name: "B.Tech",
+          link: "/btech",
+        },
+        {
+          name: "M.Tech",
+          link: "/mtech",
+        },
+        {
+          name: "Ph.D",
+          link: "/phd",
+        },
+      ],
+    },
+    {
+      name: "Notice",
+      links: [
+        {
+          name: "B.Tech",
+          link: "/btech",
+        },
+        {
+          name: "M.Tech",
+          link: "/mtech",
+        },
+        {
+          name: "Ph.D",
+          link: "/phd",
+        },
+      ],
+    },
+    {
+      name: "Alumini",
+      link: "/alumini",
+    },
+  ],
+};
+---
+
+<div class="wrapper">
+  <div class="container maxWidthContainer">
+    <div class="contact-info">
+      <div class="contact-item">
+        <Icon name="ic:round-mail" width={20} color="white" />
+        <p>{data.contact.mail}</p>
+      </div>
+      <div class="contact-item">
+        <Icon name="ic:baseline-local-phone" width={20} color="white" />
+        <p>{data.contact.phone}</p>
+      </div>
+    </div>
+    <ul class="links">
+      {
+        data.links.map((link) => (
+          <li class="link">
+            {link.links?.length ? (
+              <div class="dropdown">
+                <div class="dropdown-header">
+                  <a href={link.link}>{link.name}</a>
+                  <Icon
+                    name="ic:baseline-keyboard-arrow-down"
+                    width={20}
+                    color="white"
+                  />
+                </div>
+                <div class="dropdown-content fadeDown-anim">
+                  {link.links.map((sublink) => (
+                    <a href={sublink.link}>{sublink.name}</a>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <a href={link.link}>{link.name}</a>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style lang="scss">
+  .wrapper {
+    height: 40px;
+    background: var(--clr-bg-dark);
+    width: 100%;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .contact-item {
+          display: flex;
+          align-items: center;
+          margin-right: 1rem;
+          p {
+            margin-left: 0.8rem;
+            color: white;
+          }
+        }
+      }
+      .links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .link {
+          margin-right: 1rem;
+          a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+              color: var(--clr-primary);
+            }
+          }
+        }
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        &:hover {
+          .dropdown-content {
+            display: block;
+          }
+        }
+        .dropdown-header {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+          &:hover {
+            color: var(--clr-primary);
+          }
+        }
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: var(--clr-bg-dark);
+          min-width: 160px;
+          border-radius: 0 0 0.5rem 0.5rem;
+          z-index: 1;
+          a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            &:hover {
+              color: var(--clr-primary);
+            }
+          }
+        }
+      }
+    }
+  }
+</style>

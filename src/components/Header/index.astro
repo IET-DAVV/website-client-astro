@@ -1,0 +1,18 @@
+---
+import Navbar from "./Navbar.astro";
+import Topbar from "./Topbar.astro";
+---
+
+<header class="container">
+  <Topbar />
+  <Navbar />
+</header>
+
+<style lang="scss">
+  .container {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+</style>
