@@ -33,11 +33,15 @@ const { title } = Astro.props;
     --clr-primary: #3b7a9e;
     --clr-primary-light: #e5e5e5;
     --clr-bg-dark: #000000;
+    --clr-bg-light: #ffffff;
 
     --fixed-width: 90%;
     --fixed-width-in: 70%;
+    --nav-height: 100px;
+    --topbar-height: 40px;
 
     --clr-text-para: #808080;
+    --clr-text-dark: #000000;
   }
   /* Font sizes yet to be decided */
   h1 {
@@ -107,6 +111,13 @@ const { title } = Astro.props;
 
   .fadeDown-anim {
     animation: fadeDown 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  ul,
+  a {
+    text-decoration: none;
+    list-style: none;
+    color: var(--clr-text-dark);
   }
 
   @keyframes fadeUp {

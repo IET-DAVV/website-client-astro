@@ -1,0 +1,23 @@
+---
+interface Props {
+  showTitle?: boolean;
+}
+
+const { showTitle } = Astro.props as Props;
+---
+
+<div class="container">
+  <img src="/assets/logos/iet-logo.png" width={50} height={50} />
+  {showTitle && <span>Institute of Engineering and Technology</span>}
+</div>
+
+<style lang="scss">
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > span {
+      margin-left: 0.8rem;
+    }
+  }
+</style>

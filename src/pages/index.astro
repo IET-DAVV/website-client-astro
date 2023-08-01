@@ -2,11 +2,13 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import EventSection from "../components/landing/EventsSection/EventSection";
 import WelcomeSection from "../components/landing/WelcomeSection.astro";
+import Hero from "../components/landing/Hero.astro";
 import RecruitersSection from "../components/landing/RecruitersSection.astro";
 import ClubsSection from "../components/landing/ClubsSection.astro";
 ---
 
 <MainLayout title="IET DAVV">
+  <Hero />
   <WelcomeSection />
   <RecruitersSection />
   <EventSection client:load />
