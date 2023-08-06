@@ -126,6 +126,11 @@ let data = {
         align-items: center;
         .link {
           margin-right: 1rem;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
           a {
             color: white;
             text-decoration: none;
@@ -169,6 +174,13 @@ let data = {
               color: var(--clr-primary);
             }
           }
+        }
+      }
+    }
+    @media screen and (max-width: $bp_md) {
+      .container {
+        .links {
+          display: none;
         }
       }
     }

@@ -47,6 +47,7 @@ import { Icon } from "astro-icon";
         a {
           text-decoration: none;
           transition: all 0.2s ease-in-out;
+          white-space: nowrap;
           &:hover {
             color: var(--clr-primary);
           }
@@ -94,6 +95,13 @@ import { Icon } from "astro-icon";
   }
   .bg-solid {
     background-color: var(--clr-bg-light);
+  }
+  @media screen and (max-width: $bp_lg) {
+    .container {
+      .nav-items {
+        display: none;
+      }
+    }
   }
 </style>
 
