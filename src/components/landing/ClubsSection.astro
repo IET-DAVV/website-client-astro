@@ -47,10 +47,10 @@ const clubs = [
 ];
 ---
 
-<section>
+<section class="maxWidthContainer">
   <div class="container">
     <div class="sideContainer">
-      <div class="heading">IET CLUBS</div>
+      <h2 class="heading">IET CLUBS</h2>
       <ul class="list" id="menu">
         {
           clubs?.map((club, i: number) => {
@@ -64,9 +64,9 @@ const clubs = [
       </ul>
     </div>
     <div class="subContainer">
-      <div id="description" class="description">
+      <p id="description" class="description">
         {clubs[0].description}
-      </div>
+      </p>
       <div id="images" class="imagesContainer">
         {
           clubs[0]?.images?.map((image: any, index: number) => {
@@ -121,7 +121,7 @@ const clubs = [
   .container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     min-height: 100vh;
@@ -137,6 +137,7 @@ const clubs = [
         font-size: 1.2rem;
         font-weight: 500;
         margin: 1rem 0;
+        text-align: justify;
       }
       .imagesContainer {
         width: 100%;
@@ -167,7 +168,6 @@ const clubs = [
       .heading {
         font-size: 3rem;
         font-weight: 600;
-        font-family: serif;
       }
       .list {
         display: flex;
